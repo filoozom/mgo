@@ -644,6 +644,10 @@ func (socket *mongoSocket) readLoop() {
 	}
 }
 
+func (socket *mongoSocket) GetConn() net.Conn {
+	return socket.conn
+}
+
 var emptyHeader = []byte{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 func addHeader(b []byte, opcode int) []byte {
