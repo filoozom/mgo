@@ -1380,6 +1380,14 @@ func (session *Session) nonEventual() *Session {
 	return cloned
 }
 
+func (session *Session) GetMasterSocket() *mongoSocket {
+	return session.masterSocket
+}
+
+func (session *Session) GetSlaveSocket() *mongoSocket {
+	return session.slaveSocket
+}
+
 // Indexes returns a list of all indexes for the collection.
 //
 // For example, this snippet would drop all available indexes:
